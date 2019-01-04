@@ -1,0 +1,16 @@
+.reviewList{
+   margin: 0 auto;
+}
+
+.containerTopReviews{
+    text-align: center;
+}
+.titleTopReviews{
+    font-size: 30px;
+    font: bold;
+}
+
+.imgTopReviews{
+    width: 400px;
+    height: 400px;
+}

@@ -1,0 +1,15 @@
+.imgFeatureReview{
+    width: 70%;
+    height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.featuredVideo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.containerFeaturedReview{
+    text-align: center;
+}
