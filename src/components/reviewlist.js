@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import {fetchReviews} from '../actions'
 import './reviewlist.css';
+
 class ReviewList extends React.Component {
     
     componentDidMount() {
@@ -15,7 +16,7 @@ class ReviewList extends React.Component {
             <div>
             <span className='titleTopReviews'>{review.name}</span>
             <br></br>
-            <img className ='imgTopReviews'src={review.imgUrl} alt='missing'></img>
+            <img className ='imgTopReviews'src={review.imgUrl} alt='review'></img>
             <br></br>
             <span>{review.description}</span>
         </div>
@@ -36,7 +37,7 @@ class ReviewList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-     reviews: state.reviews
+     reviews: state.reviews.reviews
     });
 
 export default connect(mapStateToProps)(ReviewList);

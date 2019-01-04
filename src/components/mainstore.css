@@ -1,0 +1,16 @@
+.productList{
+    margin: 0 auto;
+ }
+ 
+ .containerProducts{
+     text-align: center;
+ }
+ .titleProducts{
+     font-size: 30px;
+     font: bold;
+ }
+ 
+ .imgProducts{
+     width: 400px;
+     height: 400px;
+ }

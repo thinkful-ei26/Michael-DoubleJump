@@ -33,36 +33,36 @@ export const fetchReviews = () => dispatch => {
 }
 
 
-// export const SET_STATUS_LOADING = 'SET_STATUS_LOADING';
-// export const setStatusLoading = () => ({
-//     type: SET_STATUS_LOADING
-// })
-// export const SET_STATUS = 'SET_STATUS';
-// export const setStatus = status => ({
-//     type: SET_STATUS,
-//     status
-// })
-// export const SET_STATUS_ERROR = 'SET_STATUS_ERROR';
-// export const setStatusError = error => ({
-//     type: SET_STATUS_LOADING,
-//     error
-// })
-// export const createStatus = data => dispatch => {
-//     //create a dispatch methods
-//     dispatch(setStatusLoading);
-//     fetch('http://localhost:8080/reviews')
-//     .then(res => {
-//         return res.json()
-//     })
-//     .then(data => {
-//         dispatch(setStatus(data))
-//     })
-//     .catch(err => {
-//         console.log('error');
-//         console.log(err);
-//         dispatch(setReviewError(err));
-//     })
-// }
+export const SET_PRODUCTS_LOADING = 'SET_PRODUCTS_LOADING';
+export const setProductsLoading = () => ({
+    type: SET_PRODUCTS_LOADING
+})
+export const SET_PRODUCTS = 'SET_PRODUCTS';
+export const setProducts = products => ({
+    type: SET_PRODUCTS,
+    products
+})
+export const SET_PRODUCTS_ERROR = 'SET_PRODUCTS_ERROR';
+export const setProductsError = error => ({
+    type: SET_PRODUCTS_LOADING,
+    error
+})
+export const fetchProducts = () => dispatch => {
+    //create a dispatch methods
+    dispatch(setProductsLoading);
+    fetch('http://localhost:8080/products')
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        dispatch(setProducts(data))
+    })
+    .catch(err => {
+        console.log('error');
+        console.log(err);
+        dispatch(setReviewError(err));
+    })
+}
 
 
 // for creating the users
