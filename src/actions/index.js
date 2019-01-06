@@ -22,7 +22,6 @@ export const fetchReviews = () => dispatch => {
         return res.json()
     })
     .then(data => {
-        console.log(data)
         dispatch(setReview(data))
     })
     .catch(err => {

@@ -13,15 +13,15 @@ export default class Banner extends React.Component {
           ];
            
           const properties = {
-            duration: 5000,
-            transitionDuration: 500,
+            duration: 7000,
+            transitionDuration: 1000,
             infinite: true,
             indicators: true,
             arrows: true
           }
          
         return (
-           
+           // create a banner function to create dynamic number of banners
             <Slide className='banner-slide' {...properties}>
                 <div className="each-slide">
                   <img src='https://i.imgur.com/aEwNXVn.jpg' alt='hello'>

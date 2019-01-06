@@ -7,12 +7,11 @@ import './reviewlist.css';
 class ReviewList extends React.Component {
     
     componentDidMount() {
-        console.log('hello');
         this.props.dispatch(fetchReviews())
     }
     createList(){ 
         const temp = this.props.reviews.map((review,index) => {
-        return <div className='containerTopReviews'>
+        return <div key={index} className='containerTopReviews'>
             <div>
             <span className='titleTopReviews'>{review.name}</span>
             <br></br>
@@ -22,7 +21,6 @@ class ReviewList extends React.Component {
         </div>
         </div>
     })
-        console.log(temp);
         return temp;
 }
     render(){

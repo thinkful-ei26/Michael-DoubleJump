@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Sidebar from './sidebar';
+import SideNav from './sidenav';
 import ReviewList from './reviewlist';
-import SignUp from './signup';
+import Login from './login';
 import MainStore from './mainstore';
 import Profile from './profile';
 import MainPage from './mainpage';
+import Register from './register';
 import './homepage.css';
 
 export default class HomePage extends React.Component{
@@ -14,14 +16,15 @@ export default class HomePage extends React.Component{
         return (<Router>
             <div>
             <Sidebar></Sidebar>
-     
+            <SideNav></SideNav>
             <main>
                 <Switch>
                         <Route exact path="/" component={MainPage}/>
                         <Route exact path="/reviews" component={ReviewList} />
-                        <Route exact path="/signup" component={SignUp} />
+                        <Route exact path="/login" component={Login} />
                         <Route exact path="/store" component={MainStore} />
                         <Route exact path="/profile" component={Profile} />
+                        <Route exact path="/register" component={Register}/>
                     </Switch>
                    
             </main>

@@ -2,9 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
-import RegistrationForm from './registration-form';
+import LoginForm from './login-form';
+import {Link,Redirect} from 'react-router-dom';
 
-class SignUp extends React.Component {
+class Login extends React.Component {
 
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
@@ -15,18 +16,26 @@ class SignUp extends React.Component {
     }
 
     render(){
+        if (this.props.loggedIn) {
+            return <Redirect to="/profile" />;
+        }else{
         return (
             <div>
+                <h3> Sign in</h3>
+                <LoginForm />
+                <br></br>
+                <hr></hr>
                 <h3> Sign up</h3>
-                <RegistrationForm />
+                <Link to='/register'>Register</Link>
             </div>
             );
     }
+ }
 }
 
 
 const mapStateToProps = state => ({
-    // loggedIn: state.auth.currentUser !== null
+    loggedIn: state.session.currentUser !== null
    });
 
-export default connect(mapStateToProps)(SignUp);
+export default connect(mapStateToProps)(Login);

@@ -4,13 +4,11 @@ import {fetchProducts} from '../actions';
 
 class MainStore extends React.Component {
     componentDidMount() {
-        console.log('hello');
         this.props.dispatch(fetchProducts());
     }
     createList(){ 
-        console.log(this.props.products);
         const temp = this.props.products.map((review,index) => {
-        return <div className='containerProducts'>
+        return <div key={index} className='containerProducts'>
             <div>
             <span className='titleProducts'>{review.name}</span>
             <br></br>
@@ -20,7 +18,6 @@ class MainStore extends React.Component {
         </div>
         </div>
      })
-     console.log(temp);
      return temp;
 }
     render(){

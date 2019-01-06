@@ -12,4 +12,10 @@
 }
 .containerFeaturedReview{
     text-align: center;
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
