@@ -1,31 +1,48 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchProducts} from '../actions';
+import StoreNav from './storenav';
+import './mainstore.css';
 
 class MainStore extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProducts());
     }
-    createList(){ 
-        const temp = this.props.products.map((review,index) => {
+    createList(){
+        const onClick = item =>{
+            console.log(item);
+        } 
+        const temp = this.props.products.map((product,index) => {
         return <div key={index} className='containerProducts'>
+            <div className='innerGrid'>
+            <img className ='imgProducts'src={product.imgUrl} alt='product'></img>
             <div>
-            <span className='titleProducts'>{review.name}</span>
-            <br></br>
-            <img className ='imgProducts'src={review.imgUrl} alt='product'></img>
-            <br></br>
-            <span>{review.description}</span>
+                <span className ='titleProducts'>{product.name}</span>
+                {/*
+                TODO: Clean this up and make them margins 
+                */}
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <div>
+                <span className ='priceProducts'>Buy New: {product.price} </span>
+                <button onClick={() => onClick(product.name)} className='buyButton'>add to cart</button>
+                </div>
+            </div>
         </div>
         </div>
      })
      return temp;
 }
     render(){
-        return <div>
-                <span>Welcome to the store</span>
-                <button>check out</button>
-                {this.createList()}
-                <button>add to wish list</button>
+        return <div className="store-grid">
+                <StoreNav/>
+                <div className="product-grid">
+                    {this.createList()}
+                </div>
             </div>
     }
 }

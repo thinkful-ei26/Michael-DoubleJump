@@ -15,8 +15,8 @@ export default class HomePage extends React.Component{
     render(){
         return (<Router>
             <div>
-            <Sidebar></Sidebar>
             <SideNav></SideNav>
+            <Sidebar></Sidebar>
             <main>
                 <Switch>
                         <Route exact path="/" component={MainPage}/>

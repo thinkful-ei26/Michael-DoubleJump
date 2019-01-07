@@ -3,10 +3,8 @@
 }
 
 .containerTopReviews{
-    text-align: center;
     background-color: white;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 80%;
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
@@ -17,6 +15,14 @@
 }
 
 .imgTopReviews{
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    background-color: grey;
+    padding: 10px;
+  }

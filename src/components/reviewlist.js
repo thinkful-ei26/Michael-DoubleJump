@@ -13,8 +13,6 @@ class ReviewList extends React.Component {
         const temp = this.props.reviews.map((review,index) => {
         return <div key={index} className='containerTopReviews'>
             <div>
-            <span className='titleTopReviews'>{review.name}</span>
-            <br></br>
             <img className ='imgTopReviews'src={review.imgUrl} alt='review'></img>
             <br></br>
             <span>{review.description}</span>
@@ -25,9 +23,8 @@ class ReviewList extends React.Component {
 }
     render(){
         return (
-            <div className="folder">
-                <h2>Top Reviews</h2>
-                <span>{this.createList()}</span>
+            <div className="grid">
+                {this.createList()}
             </div> 
     );
     }

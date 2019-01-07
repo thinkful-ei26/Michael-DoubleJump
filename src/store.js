@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import reviewReducer from './reducers/reviews'
 import productReducer from './reducers/products';
 import authReducer from './reducers/auth';
+import cartReducer from './reducers/cart';
 import { reducer as formReducer } from 'redux-form';
 
 const store = createStore( combineReducers({
     store: productReducer,
     reviews: reviewReducer,
     session: authReducer,
+    cart: cartReducer,
     form: formReducer
 }), applyMiddleware(thunk));
 

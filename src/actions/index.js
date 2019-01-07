@@ -63,6 +63,25 @@ export const fetchProducts = () => dispatch => {
     })
 }
 
+export const ADD_PRODUCT_LOADING = 'SET_CART_LOADING';
+export const addProductLoading = () => ({
+    type: ADD_PRODUCT_LOADING
+})
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const addProduct = product => ({
+    type: ADD_PRODUCT,
+    product
+})
+export const ADD_PRODUCT_ERROR = 'ADD_PRODUCT_ERROR';
+export const addProductError = error => ({
+    type: ADD_PRODUCT_LOADING,
+    error
+})
+export const addItem = item => dispatch => {
+    //create a dispatch methods
+    dispatch(addProduct(item));
+}
+
 
 // for creating the users
 
