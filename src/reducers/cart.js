@@ -1,4 +1,4 @@
-import {ADD_PRODUCT_LOADING,ADD_PRODUCT, ADD_PRODUCT_ERROR} from '../actions'
+import {ADD_PRODUCT_LOADING,ADD_PRODUCT, ADD_PRODUCT_ERROR , CLEAR_CART} from '../actions'
 
 const initialState = {
     items: []
@@ -13,7 +13,7 @@ const cartReducer = (state = initialState, action) => {
     }
     if(action.type === ADD_PRODUCT){
         return Object.assign({},state,{
-            items: [...state.cart.items , action.product],
+            items: [...state.items , action.product],
             error: null,
             loading: false
         })
@@ -21,6 +21,13 @@ const cartReducer = (state = initialState, action) => {
     if(action.type === ADD_PRODUCT_ERROR){
         return Object.assign({},state,{
             error: action.error,
+            loading: false
+        })
+    }
+    if(action.type === CLEAR_CART){
+        return Object.assign({},state,{
+            items: [],
+            error: null,
             loading: false
         })
     }

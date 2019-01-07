@@ -11,7 +11,7 @@ export default class SideNav extends React.Component {
     }
     render(){
     console.log(this.createCart)
-    return (<div id="mySidenav" class="sidenav">
+    return (<div id="mySidenav" className="sidenav">
     <a href="one" id="cart">{this.createCart()}</a>
   </div>)
     }

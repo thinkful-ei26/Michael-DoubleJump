@@ -82,7 +82,14 @@ export const addItem = item => dispatch => {
     dispatch(addProduct(item));
 }
 
+export const CLEAR_CART = 'CLEAR_CART';
+export const clearCart = () => ({
+    type: CLEAR_CART
+})
 
+export const newCart = () => dispatch => {
+    dispatch(clearCart());
+}
 // for creating the users
 
 // export const SET_USER_LOADING = 'SET_USER_LOADING';
