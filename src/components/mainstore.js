@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchProducts, addProduct} from '../actions';
+import {fetchProducts, addItem} from '../actions';
 import StoreNav from './storenav';
 import './mainstore.css';
 
@@ -11,7 +11,7 @@ class MainStore extends React.Component {
     createList(){
         const onClick = item =>{
             console.log(item);
-            this.props.dispatch(addProduct(item));
+            this.props.dispatch(addItem(item));
         } 
         const temp = this.props.products.map((product,index) => {
         return <div key={index} className='containerProducts'>

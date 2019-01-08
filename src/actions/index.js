@@ -77,9 +77,23 @@ export const addProductError = error => ({
     type: ADD_PRODUCT_LOADING,
     error
 })
-export const addItem = item => dispatch => {
+export const addItem = item => (dispatch,getState) => {
     //create a dispatch methods
+    const loggedIn = getState().session.currentUser !== null;
+    const authToken = getState().session.authToken;
     dispatch(addProduct(item));
+    console.log(getState().cart.items);
+    if(loggedIn){
+        fetch('http://localhost:8080/users/cart',{
+            method: 'PUT',
+            headers: {
+                // Provide our auth token as credentials
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${authToken}`
+            },
+            body: JSON.stringify({cart: getState().cart.items})
+        } ) 
+    }
 }
 
 export const CLEAR_CART = 'CLEAR_CART';
@@ -90,70 +104,68 @@ export const clearCart = () => ({
 export const newCart = () => dispatch => {
     dispatch(clearCart());
 }
-// for creating the users
 
-// export const SET_USER_LOADING = 'SET_USER_LOADING';
-// export const setUserLoading = error => ({
-//     type: SET_USER_LOADING,
-//     error
-// })
+export const SET_CART_LOADING = 'SET_CART_LOADING';
+export const setCartLoading = () => ({
+    type: SET_CART_LOADING
+})
 
-// export const SET_USER = 'SET_USER';
-// export const setUSER = error => ({
-//     type: SET_USER,
-//     error
-// })
+export const SET_CART = 'SET_CART';
+export const setCart = cart => ({
+    type: SET_CART,
+    cart
+})
+export const SET_CART_ERROR = 'SET_CART_ERROR';
+export const setCartError = error => ({
+    type: SET_CART_ERROR,
+    error
+})
 
-// export const SET_USER_ERROR = 'SET_USER';
-// export const setUserError = error => ({
-//     type: SET_USER,
-//     error
-// })
+export const fetchCart = () => (dispatch, getState) => {
+    const loggedIn = getState().session.currentUser !== null;
+    const authToken = getState().session.authToken;
+    console.log(loggedIn);
+    console.log(getState().session.currentUser);
+    if(loggedIn){
+        fetch(`http://localhost:8080/users/cart`,{
+        method: 'GET',
+        headers: {
+            // Provide our auth token as credentials
+            Authorization: `Bearer ${authToken}`
+        }
+    } )
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        console.log(data.cart);
+        dispatch(setCart(data.cart));
+    })
+    .catch(err => {
+        console.log('error');
+        console.log(err);
+        dispatch(setCartError(err));
+    })
+    }else{
+        
+  }
+}
 
-// export const fetchUser = () => dispatch => {
-//     //create a dispatch methods
-//     dispatch(setGamesLoad);
-//     fetch('http://localhost:8080/api/users')
-//     .then(res => {
-//         console.log(res);
-//         return res.json()
-//     })
-//     .then(data => dispatch(setUSER(data)))
-//     .catch(err => {
-//         console.log('error');
-//         console.log(err);
-//         dispatch(setGamesError(err));
-//     })
-// }
-
-// export const SET_LOGIN_LOADING = 'SET_LOGIN_LOADING';
-// export const setLoginLoading = error => ({
-//     type: SET_LOGIN_LOADING,
-//     error
-// })
-// export const SET_LOGIN = 'SET_LOGIN';
-// export const setLogin = error => ({
-//     type: SET_REVIEW,
-//     error
-// })
-// export const SET_LOADING_ERROR = 'SET_LOGIN_ERROR';
-// export const setLoginError = error => ({
-//     type: SET_LOGIN_LOADING,
-//     error
-// })
-
-// export const fetchLogin = () => dispatch => {
-//     //create a dispatch methods
-//     dispatch(setGamesLoad);
-//     fetch('http://localhost:8080/api/login')
-//     .then(res => {
-//         console.log(res);
-//         return res.json()
-//     })
-//     .then(data => dispatch(setLogin(data)))
-//     .catch(err => {
-//         console.log('error');
-//         console.log(err);
-//         dispatch(setGamesError(err));
-//     })
-// }
+export const clearAll = () => (dispatch,getState) => {
+    //create a dispatch methods
+    const loggedIn = getState().session.currentUser !== null;
+    const authToken = getState().session.authToken;
+    dispatch(clearCart());
+    console.log(getState().cart.items);
+    if(loggedIn){
+        fetch('http://localhost:8080/users/cart',{
+            method: 'PUT',
+            headers: {
+                // Provide our auth token as credentials
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${authToken}`
+            },
+            body: JSON.stringify({cart: getState().cart.items})
+        } ) 
+    }
+}

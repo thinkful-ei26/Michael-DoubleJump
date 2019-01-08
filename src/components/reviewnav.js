@@ -1,7 +1,7 @@
 import React from 'react';
-import './storenav.css';
+import './reviewnav.css';
 
-export default class StoreNav extends React.Component {
+export default class ReviewNav extends React.Component {
 
     createCart = ()=> {
         return <button onClick={e=> {
@@ -10,8 +10,8 @@ export default class StoreNav extends React.Component {
         }} >Checkout</button>
     }
     render(){
-    return (<div className='store-nav'>
-        <span>Search Store</span>
+    return (<div className='review-nav'>
+        <span>Search Reviews</span>
         <ul>
             <li>Shooter</li>
             <li>Fantasy</li>

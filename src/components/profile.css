@@ -1,0 +1,10 @@
+.cartItems li{
+    list-style-type: none;
+    font-size: 20px;
+    padding: 10px;
+}
+.cartItems{
+    background-color: white;
+    border-radius: 5px;
+    border: black 2px;
+}

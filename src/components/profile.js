@@ -1,8 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {fetchCart} from '../actions/index';
+import './profile.css';
 
 class Profile extends React.Component{
+    componentDidMount() {
+        this.props.dispatch(fetchCart());
+    }
     listCart(){
         return this.props.cart.map((item,index) => {
             return <li key={index}>{item}</li>
@@ -18,10 +23,11 @@ class Profile extends React.Component{
             </div>)
         }else{
             return (<div>
-                <span>User profile goes here</span>
+                <span>Welcome, {this.props.user.firstName} </span>
+                <br></br>                
+                <span>Current reward points: 0</span> 
                 <br></br>
-                <span>{this.props.user.firstName}</span>
-                <ul>{this.listCart()}</ul>  
+                <ul className="cartItems">{this.listCart()}</ul>  
             </div>)
         }
     }

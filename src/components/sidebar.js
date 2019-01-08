@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import Banner from './banner';
 import {connect} from 'react-redux';
 import {logout} from '../actions/auth';
+import {clearAll} from '../actions';
 
 function Sidebar(props) {
     if(props.user !== null){
@@ -13,7 +14,8 @@ function Sidebar(props) {
                 <Link to='/'><span className='topnav-left' href="#home">Home</span></Link>
                 <Link to='/reviews'><span className='topnav-left' href="#reviews">Reviews</span></Link>
                 <Link to='/store'><span className='topnav-left' href="#store">Store</span></Link>
-                <span className='topnav-right' onClick={()=> props.dispatch(logout())}>logout</span>
+                <span className='topnav-right' onClick={()=> props.dispatch(logout())}>Logout</span>
+                <span className='topnav-right' onClick={()=> props.dispatch(clearAll())}>Clear Cart</span>                
                 <Link to='/profile'><span className='topnav-right' href="#profile">Welcome, {props.user.username}</span></Link>
             </div>
             <Banner></Banner>
@@ -26,6 +28,7 @@ function Sidebar(props) {
                 <Link to='/'><span className='topnav-left' href="#home">Home</span></Link>
                 <Link to='/reviews'><span className='topnav-left' href="#reviews">Reviews</span></Link>
                 <Link to='/store'><span className='topnav-left' href="#store">Store</span></Link>
+                <span className='topnav-right' onClick={()=> props.dispatch(clearAll())}>Clear Cart</span>
                 <Link to='/login'><span className='topnav-right' href="#login">Sign In</span></Link>
             </div>
             <Banner></Banner>

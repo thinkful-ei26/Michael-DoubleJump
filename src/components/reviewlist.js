@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import {fetchReviews} from '../actions'
 import './reviewlist.css';
+import ReviewNav from './reviewnav';
 
 class ReviewList extends React.Component {
     
@@ -23,8 +24,11 @@ class ReviewList extends React.Component {
 }
     render(){
         return (
-            <div className="grid">
-                {this.createList()}
+            <div className="overgrid">
+                <ReviewNav></ReviewNav>
+                <div className="grid">
+                    {this.createList()}
+                </div>
             </div> 
     );
     }
