@@ -1,8 +1,9 @@
 import React from 'react';
 import './storenav.css';
 import {setSearchTerm} from '../actions';
+import {connect} from 'react-redux';
 
-export default class StoreNav extends React.Component {
+class StoreNav extends React.Component {
     componentDidMount() {
         this.props.dispatch(setSearchTerm(''));
     }
@@ -17,13 +18,14 @@ export default class StoreNav extends React.Component {
     return (<div className='store-nav'>
         <span>Search Store</span>
         <ul>
-            <li>Shooter</li>
-            <li>Fantasy</li>
-            <li>Sci-Fi</li>
-            <li>Action Adventure</li>
-            <li>Racing</li>
-            <li>Sports</li>
+            {this.createList()}
         </ul>
   </div>)
     }
 }
+
+const mapStateToProps = state => ({ 
+    searchTerm: state.search.searchTerm
+});
+
+export default connect(mapStateToProps)(StoreNav);

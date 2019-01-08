@@ -13,8 +13,26 @@ class MainStore extends React.Component {
             console.log(item);
             this.props.dispatch(addItem(item));
         } 
+       
         const temp = this.props.products.map((product,index) => {
-        return <div key={index} className='containerProducts'>
+        if(this.props.searchTerm){
+            if(product.genre === this.props.searchTerm){
+            return <div key={index} className='containerProducts'>
+            <div className='innerGrid'>
+            <img className ='imgProducts'src={product.imgUrl} alt='product'></img>
+            <div>
+                <span className ='titleProducts'>{product.name}</span>
+                
+                <div>
+                <span className ='priceProducts'>Buy New: {product.price} </span>
+                <button onClick={() => onClick(product.name)} className='buyButton'>add to cart</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        }
+        }else{
+            return <div key={index} className='containerProducts'>
             <div className='innerGrid'>
             <img className ='imgProducts'src={product.imgUrl} alt='product'></img>
             <div>
@@ -35,6 +53,7 @@ class MainStore extends React.Component {
             </div>
         </div>
         </div>
+        }
      })
      return temp;
 }
@@ -49,7 +68,8 @@ class MainStore extends React.Component {
 }
 
 const mapStateToProps = state => ({ 
-    products: state.store.products
+    products: state.store.products,
+    searchTerm: state.search.searchTerm
 });
 
 export default connect(mapStateToProps)(MainStore);
