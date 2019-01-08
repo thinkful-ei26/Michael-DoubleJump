@@ -169,3 +169,16 @@ export const clearAll = () => (dispatch,getState) => {
         } ) 
     }
 }
+
+
+// search stuff
+
+export const SET_SEARCH = 'SET_SEARCH';
+export const setSearch = searchTerm => ({
+    type: SET_SEARCH,
+    searchTerm
+})
+
+export const setSearchTerm = searchTerm => (dispatch,getState) => {
+    dispatch(setSearch(searchTerm));
+}

@@ -16,7 +16,7 @@ function Sidebar(props) {
                 <Link to='/store'><span className='topnav-left' href="#store">Store</span></Link>
                 <span className='topnav-right' onClick={()=> props.dispatch(logout())}>Logout</span>
                 <span className='topnav-right' onClick={()=> props.dispatch(clearAll())}>Clear Cart</span>                
-                <Link to='/profile'><span className='topnav-right' href="#profile">Welcome, {props.user.username}</span></Link>
+                <Link to='/profile'><span className='topnav-right' href="#profile">{props.user.username}</span></Link>
             </div>
             <Banner></Banner>
             </React.Fragment>

@@ -12,13 +12,26 @@ class ReviewList extends React.Component {
     }
     createList(){ 
         const temp = this.props.reviews.map((review,index) => {
-        return <div key={index} className='containerTopReviews'>
+        if(this.props.searchTerm){
+            console.log(this.props.searchTerm);
+            if(review.genre === this.props.searchTerm){
+                return <div key={index} className='containerTopReviews'>
             <div>
             <img className ='imgTopReviews'src={review.imgUrl} alt='review'></img>
             <br></br>
             <span>{review.description}</span>
         </div>
         </div>
+            }
+        }else{
+            return <div key={index} className='containerTopReviews'>
+            <div>
+            <img className ='imgTopReviews'src={review.imgUrl} alt='review'></img>
+            <br></br>
+            <span>{review.description}</span>
+        </div>
+        </div>
+        }
     })
         return temp;
 }
@@ -36,7 +49,8 @@ class ReviewList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-     reviews: state.reviews.reviews
+     reviews: state.reviews.reviews,
+     searchTerm: state.search.searchTerm
     });
 
 export default connect(mapStateToProps)(ReviewList);
