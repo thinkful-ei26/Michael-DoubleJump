@@ -4,7 +4,9 @@ import {setSearchTerm} from '../actions';
 import {connect} from 'react-redux';
 
 class ReviewNav extends React.Component {
-    
+    componentDidMount() {
+        this.props.dispatch(setSearchTerm(''));
+    }
     createList = () => {
         const tempArray = ['Shooter','Fantasy','Sci-Fi','Action Adventure' ,'Racing','Sports'];
         return tempArray.map( term => <li onClick={() => this.setSearch(term)}>{term}</li>)
