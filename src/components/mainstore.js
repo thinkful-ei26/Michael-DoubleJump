@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchProducts, addItem} from '../actions';
 import StoreNav from './storenav';
 import './mainstore.css';
+import ProductItem from './productitem';
 
 class MainStore extends React.Component {
     componentDidMount() {
@@ -14,47 +15,7 @@ class MainStore extends React.Component {
             this.props.dispatch(addItem(item));
         } 
        
-        const temp = this.props.products.map((product,index) => {
-        if(this.props.searchTerm){
-            if(product.genre === this.props.searchTerm){
-            return <div key={index} className='containerProducts'>
-            <div className='innerGrid'>
-            <img className ='imgProducts'src={product.imgUrl} alt='product'></img>
-            <div>
-                <span className ='titleProducts'>{product.name}</span>
-                
-                <div>
-                <span className ='priceProducts'>Buy New: {product.price} </span>
-                <button onClick={() => onClick(product.name)} className='buyButton'>add to cart</button>
-                </div>
-            </div>
-        </div>
-        </div>
-        }
-        }else{
-            return <div key={index} className='containerProducts'>
-            <div className='innerGrid'>
-            <img className ='imgProducts'src={product.imgUrl} alt='product'></img>
-            <div>
-                <span className ='titleProducts'>{product.name}</span>
-                {/*
-                TODO: Clean this up and make them margins 
-                */}
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <div>
-                <span className ='priceProducts'>Buy New: {product.price} </span>
-                <button onClick={() => onClick(product.name)} className='buyButton'>add to cart</button>
-                </div>
-            </div>
-        </div>
-        </div>
-        }
-     })
+        const temp = this.props.products.map((product,index) => <ProductItem key={index} product={product} onClick= {() => onClick(product)} searchTerm={this.props.searchTerm}></ProductItem>)
      return temp;
 }
     render(){
@@ -67,8 +28,19 @@ class MainStore extends React.Component {
     }
 }
 
+const getVisibleProducts = state => {
+    const searchTerm = state.search.searchTerm;
+    const products = state.store.products;
+    if(!searchTerm){
+        return products;
+    }else{
+        return products.filter(x => x.genre === searchTerm);
+    }
+    
+}
+
 const mapStateToProps = state => ({ 
-    products: state.store.products,
+    products: getVisibleProducts(state),
     searchTerm: state.search.searchTerm
 });
 
