@@ -6,6 +6,7 @@
   display:grid;
   grid-template-columns: 20% 80%;
   grid-gap: 10px;
+  min-height: 400px;
 }
 .product-grid {
   display: grid;

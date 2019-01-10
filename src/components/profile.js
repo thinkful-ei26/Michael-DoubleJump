@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {fetchCart} from '../actions/index';
 import './profile.css';
+import CartItem from './cartitem';
 
 class Profile extends React.Component{
     componentDidMount() {
@@ -10,7 +11,7 @@ class Profile extends React.Component{
     }
     listCart(){
         return this.props.cart.map((item,index) => {
-            return <li key={index}>{item}</li>
+            return <CartItem key={index} item={item}></CartItem>
         })
     }
     render(){
@@ -22,12 +23,18 @@ class Profile extends React.Component{
                 <Link to='/register'></Link>
             </div>)
         }else{
-            return (<div>
+            return (<div className='profileContainer'>
+                <img src='https://www.smashbros.com/assets_v2/img/fighter/pict/dark_samus.png' alt='name'></img>
                 <span>Welcome, {this.props.user.firstName} </span>
-                <br></br>                
-                <span>Current reward points: 0</span> 
-                <br></br>
-                <ul className="cartItems">{this.listCart()}</ul>  
+                <div className='customHr'></div>    
+                <div className='rewardsList'>         
+                <div>Redeem rewards for shopping!</div>
+                <div>DoubleJump Rewards Points</div> 
+                <div>Current reward points: 0</div> 
+                </div>
+                <div className='customHr'></div>
+                <ul className="cartItems">{this.listCart()}</ul>
+                <button></button>  
             </div>)
         }
     }
