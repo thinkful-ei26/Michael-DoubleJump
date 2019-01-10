@@ -1,0 +1,21 @@
+.displayTitle{
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+    color: white;
+}
+
+.cartItems div div{
+    list-style-type: none;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+}
+.cartItems{
+    color: white;
+    display:block;
+    margin-left: 50px;
+    padding:5px;
+    
+}

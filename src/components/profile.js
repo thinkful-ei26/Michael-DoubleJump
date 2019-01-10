@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {fetchCart} from '../actions/index';
 import './profile.css';
 import CartItem from './cartitem';
+import Cart from './cart';
 
 class Profile extends React.Component{
     componentDidMount() {
@@ -33,8 +34,7 @@ class Profile extends React.Component{
                 <div>Current reward points: 0</div> 
                 </div>
                 <div className='customHr'></div>
-                <ul className="cartItems">{this.listCart()}</ul>
-                <button></button>  
+                <Cart></Cart>
             </div>)
         }
     }
