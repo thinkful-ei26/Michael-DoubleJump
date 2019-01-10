@@ -182,3 +182,43 @@ export const setSearch = searchTerm => ({
 export const setSearchTerm = searchTerm => (dispatch,getState) => {
     dispatch(setSearch(searchTerm));
 }
+
+
+//order history
+export const SET_ORDER_HISTORY_LOADING = 'SET_ORDER_HISTORY_LOADING';
+export const setOrderHistoryLoading = () => ({
+    type: SET_ORDER_HISTORY_LOADING
+})
+export const SET_ORDER_HISTORY = 'SET_ORDER_HISTORY';
+export const setOrderHistory = orderHistory => ({
+    type: SET_ORDER_HISTORY,
+    orderHistory
+})
+export const SET_ORDER_HISTORY_ERROR = 'SET_ORDER_HISTORY_ERROR';
+export const setOrderHistoryError = error => ({
+    type: SET_ORDER_HISTORY_ERROR,
+    error
+})
+
+export const fetchOrderHistory = () => (dispatch, getState) => {
+    const authToken = getState().session.authToken;
+    dispatch(setOrderHistoryLoading());
+    fetch('http://localhost:8080/orders',{
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    } )
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        console.log(data);
+        dispatch(setOrderHistory(data))
+    }) 
+    .catch( err => {
+        console.log('error');
+        console.log(err);
+        dispatch(setOrderHistoryError(err));
+    })
+}    

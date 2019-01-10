@@ -21,13 +21,13 @@ class Register extends React.Component {
             return <Redirect to="/profile" />;
         }else{
             return (
-                <div>
-                    <h3> Sign up</h3>
+                <div className = 'loginBackground'>
+                    <h3 className='loginText'> Sign up</h3>
                     <RegistrationForm />
                     <br></br>
                     <hr></hr>
-                    <h3> Already have an account? </h3>
-                    <Link to='/login'>Login</Link>
+                    <h3 className='loginText'> Already have an account? </h3>
+                    <Link className='smallloginText' to='/login'>Login</Link>
                 </div>
                 );
         }

@@ -4,6 +4,7 @@ import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import LoginForm from './login-form';
 import {Link,Redirect} from 'react-router-dom';
+import './login.css';
 
 class Login extends React.Component {
 
@@ -20,13 +21,13 @@ class Login extends React.Component {
             return <Redirect to="/profile" />;
         }else{
         return (
-            <div>
-                <h3> Sign in</h3>
+            <div className = 'loginBackground'>
+                <h3 className='loginText'> Sign in</h3>
                 <LoginForm />
                 <br></br>
                 <hr></hr>
-                <h3> Sign up</h3>
-                <Link to='/register'>Register</Link>
+                <h3 className='loginText'> Sign up</h3>
+                <Link className='smallloginText' to='/register'>Register</Link>
             </div>
             );
     }

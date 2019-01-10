@@ -1,14 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {fetchCart} from '../actions/index';
+import {Redirect} from 'react-router-dom';
+import {fetchCart, fetchOrderHistory} from '../actions/index';
 import './profile.css';
 import CartItem from './cartitem';
 import Cart from './cart';
-
+import Orders from './orders'; 
 class Profile extends React.Component{
     componentDidMount() {
         this.props.dispatch(fetchCart());
+        if(this.props.user !== null){
+        this.props.dispatch(fetchOrderHistory());
+        }
     }
     listCart(){
         return this.props.cart.map((item,index) => {
@@ -17,12 +20,7 @@ class Profile extends React.Component{
     }
     render(){
         if(this.props.user === null){
-            return (<div>
-                <span>Login to see your profile.</span>
-                <Link to='/login'></Link>
-                <span>Register now to make the most of DoubleJumps features!</span>
-                <Link to='/register'></Link>
-            </div>)
+            return (<Redirect to='/login'></Redirect>)
         }else{
             return (<div className='profileContainer'>
                 <img src='https://www.smashbros.com/assets_v2/img/fighter/pict/dark_samus.png' alt='name'></img>
@@ -35,6 +33,7 @@ class Profile extends React.Component{
                 </div>
                 <div className='customHr'></div>
                 <Cart></Cart>
+                <Orders orders={this.props.orders}></Orders>
             </div>)
         }
     }
@@ -42,7 +41,8 @@ class Profile extends React.Component{
 
 const mapStateToProps = state => ({ 
     user: state.session.currentUser,
-    cart: state.cart.items
+    cart: state.cart.items,
+    orders: state.orders.orderHistory
 });
 
 export default connect(mapStateToProps)(Profile);

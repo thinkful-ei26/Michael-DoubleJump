@@ -12,10 +12,36 @@
     font-size: 28px;
     line-height: 1.2;
 }
+.cartItems div span{
+    padding: 10px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+}
 .cartItems{
     color: white;
     display:block;
     margin-left: 50px;
     padding:5px;
     
+}
+
+
+.checkout-bar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.checkout-bar button{
+    border-radius:5px;
+    width:80%;
+    background-color: green;
+    color: white;
+}
+
+.checkout-bar button:hover{
+    color:black;
+    background: white;
+    border-radius: 5px;
+    cursor:pointer;
 }

@@ -16,7 +16,7 @@ class StoreNav extends React.Component {
     }
     render(){
     return (<div className='store-nav'>
-        <span>Search Store</span>
+        <span onClick={() => this.setSearch('')}>Search Store</span>
         <ul>
             {this.createList()}
         </ul>

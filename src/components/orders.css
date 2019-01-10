@@ -1,0 +1,8 @@
+.order-list{
+    list-style-type: none;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+    color:white;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ReviewItem({ review, onClick}) {
+export default function ReviewItem({ review}) {
      
             return <div className='containerTopReviews'>
             <div className='innerGrid'>

@@ -25,7 +25,7 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
+                <label className='smallloginText' htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
@@ -33,7 +33,7 @@ export class LoginForm extends React.Component {
                     id="username"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
+                <label className='smallloginText' htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
@@ -41,7 +41,7 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className='loginButton' disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
             </form>

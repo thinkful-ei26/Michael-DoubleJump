@@ -26,10 +26,12 @@ class Cart extends React.Component {
         }else{
             return<div className='cartItems'>
             <div>{this.listCart()}</div>
-            <div className='customHr'></div>   
+            <div className='customHr'></div> 
+            <div className='checkout-bar'>  
             <span>Total: {this.renderTotal()} plus tax</span>
             <button onClick={() => this.props.dispatch(clearAll())}>Checkout</button>
             <button onClick={() => this.props.dispatch(newCart())}>Clear cart</button>
+            </div>
         </div>
         }
     }
