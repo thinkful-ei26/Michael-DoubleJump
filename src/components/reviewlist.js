@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {fetchReviews} from '../actions'
 import './reviewlist.css';
 import ReviewNav from './reviewnav';
+import ReviewItem from './reviewitem';
 
 class ReviewList extends React.Component {
     
@@ -11,28 +12,7 @@ class ReviewList extends React.Component {
         this.props.dispatch(fetchReviews())
     }
     createList(){ 
-        const temp = this.props.reviews.map((review,index) => {
-        if(this.props.searchTerm){
-            console.log(this.props.searchTerm);
-            if(review.genre === this.props.searchTerm){
-                return <div key={index} className='containerTopReviews'>
-            <div>
-            <img className ='imgTopReviews'src={review.imgUrl} alt='review'></img>
-            <br></br>
-            <span>{review.description}</span>
-        </div>
-        </div>
-            }
-        }else{
-            return <div key={index} className='containerTopReviews'>
-            <div>
-            <img className ='imgTopReviews'src={review.imgUrl} alt='review'></img>
-            <br></br>
-            <span>{review.description}</span>
-        </div>
-        </div>
-        }
-    })
+        const temp = this.props.reviews.map((review,index) => <ReviewItem key={index} review={review} searchTerm={this.props.searchTerm}/>)
         return temp;
 }
     render(){
@@ -48,8 +28,19 @@ class ReviewList extends React.Component {
     
 }
 
+const getVisibleReviews = state => {
+    const searchTerm = state.search.searchTerm;
+    const reviews = state.reviews.reviews;
+    if(!searchTerm){
+        return reviews;
+    }else{
+        return reviews.filter(x => x.genre === searchTerm);
+    }
+    
+}
+
 const mapStateToProps = state => ({
-     reviews: state.reviews.reviews,
+     reviews: getVisibleReviews(state),
      searchTerm: state.search.searchTerm
     });
 

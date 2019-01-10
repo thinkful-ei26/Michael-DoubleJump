@@ -15,7 +15,7 @@ class MainStore extends React.Component {
             this.props.dispatch(addItem(item));
         } 
        
-        const temp = this.props.products.map((product,index) => <ProductItem key={index} product={product} onClick= {() => onClick(product)} searchTerm={this.props.searchTerm}></ProductItem>)
+        const temp = this.props.products.map((product,index) => <ProductItem key={index} product={product} onClick= {() => onClick(product)}/>)
      return temp;
 }
     render(){
