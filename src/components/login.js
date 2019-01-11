@@ -8,14 +8,6 @@ import './login.css';
 
 class Login extends React.Component {
 
-    onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
-        return this.props
-            .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(login(username, password)));
-    }
-
     render(){
         if (this.props.loggedIn) {
             return <Redirect to="/profile" />;

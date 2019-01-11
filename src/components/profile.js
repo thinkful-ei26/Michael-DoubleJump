@@ -5,7 +5,7 @@ import {fetchCart, fetchOrderHistory} from '../actions/index';
 import './profile.css';
 import CartItem from './cartitem';
 import Cart from './cart';
-import Orders from './orders'; 
+import OrdersHistory from './ordershistory'; 
 class Profile extends React.Component{
     componentDidMount() {
         this.props.dispatch(fetchCart());
@@ -33,7 +33,7 @@ class Profile extends React.Component{
                 </div>
                 <div className='customHr'></div>
                 <Cart></Cart>
-                <Orders orders={this.props.orders}></Orders>
+                <OrdersHistory orders={this.props.orders}></OrdersHistory>
             </div>)
         }
     }

@@ -9,6 +9,7 @@ import {
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
     currentUser: null,
+    address: null,
     loading: false,
     error: null
 };

@@ -1,12 +1,12 @@
 import React from 'react';
-import './orders.css';
+import './ordershistory.css';
 
-export default function Orders(props) {
+export default function OrdersHistory(props) {
     console.log(props.orders);
     const list = props.orders.map((order,index) => {
         if(order.shipdate){
             return <li className='order-list' key={index}><span>{order.completed}</span>
-        <span>{order.items[0]}</span>
+        <span>{order.items[0].name}</span>
         <br></br>
         <span>{order.address}</span>
         <br></br>

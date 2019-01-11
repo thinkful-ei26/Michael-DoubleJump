@@ -9,6 +9,7 @@ import Profile from './profile';
 import MainPage from './mainpage';
 import Register from './register';
 import Cart from './cart';
+import Order from './order';
 import './homepage.css';
 
 export default class HomePage extends React.Component{
@@ -27,6 +28,7 @@ export default class HomePage extends React.Component{
                         <Route exact path="/profile" component={Profile} />
                         <Route exact path="/register" component={Register}/>
                         <Route exact path="/cart" component={Cart}/>
+                        <Route exact path="/order" component={Order}/>
                     </Switch>
                    
             </main>

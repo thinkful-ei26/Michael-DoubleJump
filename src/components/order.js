@@ -2,11 +2,11 @@ import React from 'react';
 import {fetchCart} from '../actions/index';
 import {connect} from 'react-redux';
 import CartItem from './cartitem';
-import {clearAll} from '../actions';
-import {Link} from 'react-router-dom';
+import {setNewOrder} from '../actions';
+import {Redirect} from 'react-router-dom';
 import './cart.css';
 
-class Cart extends React.Component {
+class Order extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchCart());
     }
@@ -20,21 +20,17 @@ class Cart extends React.Component {
         })
     }
     render(){
-        if(this.props.cart.length === 0){
-            return <div className='displayTitle'>
-                Your cart is empty
-            </div>
-        }else{
-            return<div className='cartItems'>
+            return <div className='cartItems'>
             <div>{this.listCart()}</div>
             <div className='customHr'></div> 
             <div className='checkout-bar'>  
             <span>Total: {this.renderTotal()} plus tax</span>
-            <Link to='/order'>Checkout</Link>
-            <button onClick={() => this.props.dispatch(clearAll())}>Clear cart</button>
+            <button onClick={() => {
+                this.props.dispatch(setNewOrder())
+                return <Redirect to='/complete'></Redirect>
+            }}>Confirm Submission</button>
             </div>
         </div>
-        }
     }
 }
 
@@ -44,4 +40,4 @@ const mapStateToProps = state => ({
     cart: state.cart.items
 });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps)(Order);

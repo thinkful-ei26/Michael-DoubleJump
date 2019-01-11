@@ -102,10 +102,6 @@ export const clearCart = () => ({
     type: CLEAR_CART
 })
 
-export const newCart = () => dispatch => {
-    dispatch(clearCart());
-}
-
 export const SET_CART_LOADING = 'SET_CART_LOADING';
 export const setCartLoading = () => ({
     type: SET_CART_LOADING
@@ -223,3 +219,35 @@ export const fetchOrderHistory = () => (dispatch, getState) => {
         dispatch(setOrderHistoryError(err));
     })
 }    
+
+export const SET_ORDER = 'SET_ORDER';
+export const setOrder = order=> ({
+    type: SET_ORDER,
+    order
+})
+
+export const setNewOrder = () => (dispatch, getState) => {
+    if(getState().session.currentUser !== null){
+        const authToken = getState().session.authToken;
+        const address = getState().session.currentUser.address;
+        console.log(getState().session.currentUser);
+        fetch(`${API_BASE_URL}/orders`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({items: getState().cart.items, address:address})
+        })
+    }else{
+            //anon orders
+        //     fetch(`${API_BASE_URL}/orders/anon`, {
+        //     method: 'POST',
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({items: getState().cart.items})
+        // })
+    }
+   
+}
