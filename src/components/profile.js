@@ -23,8 +23,8 @@ class Profile extends React.Component{
             return (<Redirect to='/login'></Redirect>)
         }else{
             return (<div className='profileContainer'>
-                <img src='https://www.smashbros.com/assets_v2/img/fighter/pict/dark_samus.png' alt='name'></img>
-                <span>Welcome, {this.props.user.firstName} </span>
+                <img className='profilePic'src='https://www.smashbros.com/assets_v2/img/fighter/pict/dark_samus.png' alt='name'></img>               
+                <span className='welcomeText'>Welcome, {this.props.user.firstName} </span>
                 <div className='customHr'></div>    
                 <div className='rewardsList'>         
                 <div>Redeem rewards for shopping!</div>
@@ -32,8 +32,11 @@ class Profile extends React.Component{
                 <div>Current reward points: 0</div> 
                 </div>
                 <div className='customHr'></div>
+                <br></br>
+                <div>
                 <Cart></Cart>
                 <OrdersHistory orders={this.props.orders}></OrdersHistory>
+                </div>
             </div>)
         }
     }

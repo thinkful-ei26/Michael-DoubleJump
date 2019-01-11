@@ -6,6 +6,7 @@
     color: white;
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
 }
 
 html{
@@ -28,4 +29,16 @@ html{
 .rewardsList div{
     display:block;
     padding: 5px;
+}
+
+.profilePic{
+    background-color: rgb(21, 17, 34);
+    border-radius:30px;
+    border: white 3px solid;
+    float:left;
+}
+
+.welcomeText{
+    font-size: 30px;
+    padding-bottom:90px;
 }
