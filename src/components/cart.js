@@ -22,7 +22,8 @@ class Cart extends React.Component {
     render(){
         if(this.props.cart.length === 0){
             return <div className='cartItems'>
-                Your cart is empty
+                <p>Your cart is empty!</p>
+                <p>Dont miss out on the great deals we have visit our store today!</p>
             </div>
         }else{
             return<div className='cartItems'>

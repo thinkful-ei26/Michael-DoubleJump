@@ -12,6 +12,10 @@
     font-size: 28px;
     line-height: 1.2;
 }
+
+.cartItems p{
+    font-size:30px;
+}
 .cartItems div span{
     padding: 10px;
     font-weight: 400;

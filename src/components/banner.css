@@ -29,3 +29,9 @@
     margin-left: -60px;
     display:none;
 }
+
+* {
+    box-sizing: border-box;
+}
+/* Pre-allocate room for the scrollbars, where supported 
+html {overflow: overlay;} */
