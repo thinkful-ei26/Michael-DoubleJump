@@ -19,3 +19,15 @@
     margin-bottom: 20px;
     padding: 20px;
 }
+/* 
+.wrapper{
+    display: flex;
+    align-items: stretch;
+    flex-wrap: none;
+
+}
+
+.big-item{
+    background-color: black;
+    width: 80%;
+} */

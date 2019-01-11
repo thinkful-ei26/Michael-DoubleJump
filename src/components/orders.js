@@ -9,7 +9,8 @@ export default function Orders(props) {
         <br></br>
         <span>{order.address}</span>
         <br></br>
-        <span>{order.shipdate}</span></li>
+        <span>Delivery date: {order.shipdate.split('T')[0]}</span>
+        </li>
     })
     return <div><div className ='customHr'></div>{list}</div>
 }
