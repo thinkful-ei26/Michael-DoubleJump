@@ -21,8 +21,11 @@ export default function OrdersHistory(props) {
         </li>
     }
     const list = props.orders.map((order,index) => {
+        console.log(order);
         if(order.shipdate){
             return <div>{listMaker(order,index)}</div>
+        }else{
+            return <span>No Orders</span>
         }
         
     })
