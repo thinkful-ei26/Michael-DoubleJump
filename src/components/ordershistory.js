@@ -24,7 +24,7 @@ export default function OrdersHistory(props) {
         if(order.shipdate){
             return <div>{listMaker(order,index)}</div>
         }else{
-            return <span>No Ordersaaaa</span>
+            return <span>No Orders</span>
         }
         
     })
