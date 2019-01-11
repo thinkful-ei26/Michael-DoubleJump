@@ -1,3 +1,18 @@
+DOUBLE JUMP 
+
+ The projects goal is to generate interest in games and accessories with its reviews and sell those items to its users.
+
+ Deployed version: https://stormy-tundra-79111.herokuapp.com/
+
+Instructions: To use this app properly sign in at the top right link. Once you have entered all the fields and registered you will be rerouted to the profile page. Here you will see the cart and order history of the user if any was detected on load. Add some items from the cart and complete and order either through the profile or cart pages. Once compelte check the status of your order history on your profile. View some reviews.
+
+Codebase: ./actions holds action files
+./components contains css and js files for components
+./reducers contains all reducers
+Other files are in the top level server.js ect.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
