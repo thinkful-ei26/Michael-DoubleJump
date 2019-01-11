@@ -13,6 +13,7 @@ function Sidebar(props) {
                 <Link to='/'><span className='topnav-left' href="#home">Home</span></Link>
                 <Link to='/reviews'><span className='topnav-left' href="#reviews">Reviews</span></Link>
                 <Link to='/store'><span className='topnav-left' href="#store">Store</span></Link>
+                <img src='https://static1.squarespace.com/static/5b43afa4372b9648b4ee1100/t/5b43b33cf950b76063ec5618/1542162228867/?format=1500w' alt='cp'></img>
                 <span className='topnav-right' onClick={()=> props.dispatch(logout())}>Logout</span>
                 <Link to='/cart'><span className='topnav-right' href="#cart">Cart</span></Link>                
                 <Link to='/profile'><span className='topnav-right' href="#profile">{props.user.username}</span></Link>
@@ -27,6 +28,7 @@ function Sidebar(props) {
                 <Link to='/'><span className='topnav-left' href="#home">Home</span></Link>
                 <Link to='/reviews'><span className='topnav-left' href="#reviews">Reviews</span></Link>
                 <Link to='/store'><span className='topnav-left' href="#store">Store</span></Link>
+                <img src='https://static1.squarespace.com/static/5b43afa4372b9648b4ee1100/t/5b43b33cf950b76063ec5618/1542162228867/?format=1500w' alt='cp'></img>
                 <Link to='/cart'><span className='topnav-right' href="#cart">Cart</span></Link>   
                 <Link to='/login'><span className='topnav-right' href="#login">Sign In</span></Link>
             </div>

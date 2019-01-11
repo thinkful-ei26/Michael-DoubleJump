@@ -18,7 +18,6 @@ export default class HomePage extends React.Component{
     render(){
         return (<Router>
             <div>
-            <SideNav></SideNav>
             <Sidebar></Sidebar>
             <main>
                 <Switch>
