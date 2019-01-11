@@ -21,7 +21,7 @@ class Cart extends React.Component {
     }
     render(){
         if(this.props.cart.length === 0){
-            return <div className='displayTitle'>
+            return <div className='cartItems'>
                 Your cart is empty
             </div>
         }else{

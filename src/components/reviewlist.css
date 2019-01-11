@@ -14,10 +14,15 @@
     font: bold;
 }
 
+.titleTopReviews:hover{
+    cursor: pointer;
+}
+
 .imgTopReviews{
     width: 200px;
     height: 200px;
     outline: 2px solid black;
+    
 }
 .overgrid{
     display: grid;

@@ -12,7 +12,7 @@ class ReviewList extends React.Component {
         this.props.dispatch(fetchReviews())
     }
     createList(){ 
-        const temp = this.props.reviews.map((review,index) => <ReviewItem key={index} review={review} searchTerm={this.props.searchTerm}/>)
+        const temp = this.props.reviews.map((review,index) => <ReviewItem key={index} reviews={this.props.reviews} review={review} searchTerm={this.props.searchTerm}/>)
         return temp;
 }
     render(){
