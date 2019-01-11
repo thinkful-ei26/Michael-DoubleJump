@@ -1,4 +1,5 @@
 // for setting the reviews
+import {API_BASE_URL} from '../config';
 
 export const SET_REVIEW_LOADING = 'SET_REVIEW_LOADING';
 export const setReviewLoading = () => ({
@@ -17,7 +18,7 @@ export const setReviewError = error => ({
 export const fetchReviews = () => dispatch => {
     //create a dispatch methods
     dispatch(setReviewLoading);
-    fetch('http://localhost:8080/reviews')
+    fetch(`${API_BASE_URL}/reviews`)
     .then(res => {
         return res.json()
     })
@@ -49,7 +50,7 @@ export const setProductsError = error => ({
 export const fetchProducts = () => dispatch => {
     //create a dispatch methods
     dispatch(setProductsLoading);
-    fetch('http://localhost:8080/products')
+    fetch(`${API_BASE_URL}/products`)
     .then(res => {
         return res.json()
     })
@@ -84,7 +85,7 @@ export const addItem = item => (dispatch,getState) => {
     dispatch(addProduct(item));
     console.log(getState().cart.items);
     if(loggedIn){
-        fetch('http://localhost:8080/users/cart',{
+        fetch(`${API_BASE_URL}/users/cart`,{
             method: 'PUT',
             headers: {
                 // Provide our auth token as credentials
@@ -127,7 +128,7 @@ export const fetchCart = () => (dispatch, getState) => {
     console.log(loggedIn);
     console.log(getState().session.currentUser);
     if(loggedIn){
-        fetch(`http://localhost:8080/users/cart`,{
+        fetch(`${API_BASE_URL}/users/cart`,{
         method: 'GET',
         headers: {
             // Provide our auth token as credentials
@@ -158,7 +159,7 @@ export const clearAll = () => (dispatch,getState) => {
     dispatch(clearCart());
     console.log(getState().cart.items);
     if(loggedIn){
-        fetch('http://localhost:8080/users/cart',{
+        fetch(`${API_BASE_URL}/users/cart`,{
             method: 'PUT',
             headers: {
                 // Provide our auth token as credentials
@@ -203,7 +204,7 @@ export const setOrderHistoryError = error => ({
 export const fetchOrderHistory = () => (dispatch, getState) => {
     const authToken = getState().session.authToken;
     dispatch(setOrderHistoryLoading());
-    fetch('http://localhost:8080/orders',{
+    fetch(`${API_BASE_URL}/orders`,{
         method: 'GET',
         headers: {
             Authorization: `Bearer ${authToken}`
