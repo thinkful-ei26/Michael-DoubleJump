@@ -2,15 +2,12 @@ import React from 'react';
 import './ordershistory.css';
 
 export default function OrdersHistory(props) {
-    console.log(props.orders);
     const itemList = (items) => {
         return items.map((item)=>{
             return <li className='deliveryItem'>{item.name}</li>
         })
     }
     const listMaker = (order,index) => {
-        console.log(order);
-        console.log(order.completed);
         return <li className='order-list' key={index}><span className='orderText'>Order Delivered: {order.completed.toString()}</span>
         <ul>{itemList(order.items)}</ul>
         <br></br>

@@ -26,8 +26,6 @@ export const fetchReviews = () => dispatch => {
         dispatch(setReview(data))
     })
     .catch(err => {
-        console.log('error');
-        console.log(err);
         dispatch(setReviewError(err));
     })
 }
@@ -58,8 +56,6 @@ export const fetchProducts = () => dispatch => {
         dispatch(setProducts(data))
     })
     .catch(err => {
-        console.log('error');
-        console.log(err);
         dispatch(setReviewError(err));
     })
 }
@@ -83,7 +79,6 @@ export const addItem = item => (dispatch,getState) => {
     const loggedIn = getState().session.currentUser !== null;
     const authToken = getState().session.authToken;
     dispatch(addProduct(item));
-    console.log(getState().cart.items);
     if(loggedIn){
         fetch(`${API_BASE_URL}/users/cart`,{
             method: 'PUT',
@@ -121,8 +116,6 @@ export const setCartError = error => ({
 export const fetchCart = () => (dispatch, getState) => {
     const loggedIn = getState().session.currentUser !== null;
     const authToken = getState().session.authToken;
-    console.log(loggedIn);
-    console.log(getState().session.currentUser);
     if(loggedIn){
         fetch(`${API_BASE_URL}/users/cart`,{
         method: 'GET',
@@ -135,12 +128,9 @@ export const fetchCart = () => (dispatch, getState) => {
         return res.json()
     })
     .then(data => {
-        console.log(data.cart);
         dispatch(setCart(data.cart));
     })
     .catch(err => {
-        console.log('error');
-        console.log(err);
         dispatch(setCartError(err));
     })
     }else{
@@ -153,7 +143,6 @@ export const clearAll = () => (dispatch,getState) => {
     const loggedIn = getState().session.currentUser !== null;
     const authToken = getState().session.authToken;
     dispatch(clearCart());
-    console.log(getState().cart.items);
     if(loggedIn){
         fetch(`${API_BASE_URL}/users/cart`,{
             method: 'PUT',
@@ -210,12 +199,9 @@ export const fetchOrderHistory = () => (dispatch, getState) => {
         return res.json()
     })
     .then(data => {
-        console.log(data);
         dispatch(setOrderHistory(data))
     }) 
     .catch( err => {
-        console.log('error');
-        console.log(err);
         dispatch(setOrderHistoryError(err));
     })
 }    
@@ -230,7 +216,6 @@ export const setNewOrder = () => (dispatch, getState) => {
     if(getState().session.currentUser !== null){
         const authToken = getState().session.authToken;
         const address = getState().session.currentUser.address;
-        console.log(getState().session.currentUser);
         fetch(`${API_BASE_URL}/orders`, {
             method: 'POST',
             headers: {

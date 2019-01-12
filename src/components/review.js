@@ -5,7 +5,6 @@ export default function Review(props) {
     const {id} = props.match.params;
     const temp = props.location.state.reviews.map(item => {
         if(item.id === id){
-            console.log(item);
            return <div className='reviewContainer'>
                 <div className='customHr'></div>
                 <span className='rating-span'>{item.rating.toString()}/10</span>

@@ -11,7 +11,6 @@ class MainStore extends React.Component {
     }
     createList(){
         const onClick = item =>{
-            console.log(item);
             this.props.dispatch(addItem(item));
         } 
        
