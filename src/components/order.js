@@ -25,7 +25,7 @@ class Order extends React.Component {
             <div className='customHr'></div> 
             <div className='checkout-bar'>  
             <span>Total: {this.renderTotal()} plus tax</span>
-           <a href="complete" onClick={() => {
+            <a href="complete" onClick={() => {
                 this.props.dispatch(setNewOrder());
             }}>Confirm Submission</a>
             </div>
