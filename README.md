@@ -20,9 +20,10 @@ Once you have entered all the fields and registered you will be rerouted to the 
  Here you will see the cart and order history of the user if any was detected on load. Add some items from the cart and complete and order either through the profile or cart pages. 
 
 # Tech Stack
-Node
-express
-mongoose
-mongodb
-react
-redux/redux thunk
+Node,
+express,
+mongoose,
+mongodb,
+react,
+redux/redux thunk,
+JWT
