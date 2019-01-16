@@ -1,3 +1,39 @@
+
+.imgFeatureReview{
+    width: 100%;
+    display: block;
+    margin-right:20px;
+    border-radius:5px;
+
+}
+.featuredVideo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+.containerFeaturedReview{
+    background-color: #333;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.authorTitle{
+    color:white;
+    font-size:20px;
+}
+.rightImg{
+    width:100%;
+    margin-top:10px;
+    border-radius:5px;
+}
+.intro{
+    text-align: center;
+    color:white;
+    font-size:20px;
+}
+
+@media only screen and (min-width: 768px) {
 .imgFeatureReview{
     width: 50%;
     height: 500px;
@@ -35,6 +71,11 @@
     color:white;
     font-size:20px;
 }
+
+}
+
+
+
 /* 
 .wrapper{
     display: flex;
