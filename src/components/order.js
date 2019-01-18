@@ -3,7 +3,7 @@ import { fetchCart } from "../actions/index";
 import { connect } from "react-redux";
 import CartItem from "./cartitem";
 import { setNewOrder } from "../actions";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import "./css/cart.css";
 
 class Order extends React.Component {
@@ -26,14 +26,13 @@ class Order extends React.Component {
         <div className="customHr" />
         <div className="checkout-bar">
           <span>Total: {this.renderTotal()} plus tax</span>
-          <a
-            href="complete"
-            onClick={() => {
-              this.props.dispatch(setNewOrder());
-            }}
+          <Link
+            class="checkout-button"
+            to="/complete"
+            onClick={() => this.props.dispatch(setNewOrder())}
           >
-            Confirm Submission
-          </a>
+            Confirm Order
+          </Link>
         </div>
       </div>
     );

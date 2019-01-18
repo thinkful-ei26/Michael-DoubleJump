@@ -28,7 +28,7 @@
  }
  .overgrid{
      display: grid;
-     grid-template-rows: auto;
+     grid-template-rows: 350px auto;
      grid-gap: 10px;
      
  }

@@ -13,29 +13,27 @@
     padding: 20px;
 }
 .reviewBody{
-    font-size: 26px;
+    font-size: 20px;
     color:white;
 }
 
 .reviewImg-left{
   
-    height: 500px;
+    width:100%;
     display: block;
-    float:left;
     margin-right:20px;
     border-radius:5px;
 }
 .reviewImg-right{
     margin-right:20px;
-    float:right;
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    display: block;
     border: solid 3px black;
     
 }
 
 .rating-span{
-    float:right;
+   display:none;
     margin-right: 70px;
     font-size: 100px;
     background-color: white;
