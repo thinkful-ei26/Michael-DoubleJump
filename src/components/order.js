@@ -2,8 +2,8 @@ import React from "react";
 import { fetchCart } from "../actions/index";
 import { connect } from "react-redux";
 import CartItem from "./cartitem";
-import { setNewOrder } from "../actions";
-import { Redirect, Link } from "react-router-dom";
+import { setNewOrder, clearAll } from "../actions";
+import { Link } from "react-router-dom";
 import "./css/cart.css";
 
 class Order extends React.Component {
@@ -29,7 +29,10 @@ class Order extends React.Component {
           <Link
             class="checkout-button"
             to="/complete"
-            onClick={() => this.props.dispatch(setNewOrder())}
+            onClick={() => {
+              this.props.dispatch(setNewOrder());
+              this.props.dispatch(clearAll());
+            }}
           >
             Confirm Order
           </Link>
