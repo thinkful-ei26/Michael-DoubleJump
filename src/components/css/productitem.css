@@ -4,7 +4,18 @@
   color: orange;
 }
 
+.minibutton{
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
+
+.minibutton{
+  background-color: transparent;
+  border-color: orange;
+  color: orange;
+  display: block;
+}
 
 .mini{
   display: none;

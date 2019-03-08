@@ -10,7 +10,7 @@ export default function ProductItem({ product, onClick }) {
         <br></br>
         <span className='orange-text'>
           {" "}
-          Description: <span className='white-text'>{product.author}</span>
+          Description: <span className='white-text '>{product.author}</span>
           <br></br>
           <span className='white-text'>{product.description}</span>
         </span>
@@ -19,6 +19,9 @@ export default function ProductItem({ product, onClick }) {
           Add to cart
             </button>
       </div>
+      <button className='minibutton' onClick={() => onClick()}>
+        Add to cart
+            </button>
     </div>
   );
 }

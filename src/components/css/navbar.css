@@ -48,6 +48,7 @@
 
   /* Style the links inside the navigation bar */
   .topnav-left {
+    margin-top: 20px;
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -77,6 +78,7 @@
   }
 
   .topnav-right {
+    margin-top: 20px;
     float: right;
     color: #f2f2f2;
     text-align: center;
