@@ -14,8 +14,7 @@ class Register extends React.Component {
         <div className="loginBackground">
           <h3 className="loginText"> Sign up</h3>
           <RegistrationForm />
-          <br />
-          <hr />
+          <div className='customHr'></div>
           <h3 className="loginText"> Already have an account? </h3>
           <Link className="smallloginText" to="/login">
             Login

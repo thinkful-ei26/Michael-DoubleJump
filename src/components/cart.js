@@ -23,7 +23,7 @@ class Cart extends React.Component {
     if (this.props.cart.length === 0) {
       return (
         <div className="cartItems">
-          <p>Your cart is empty!</p>
+          <p className='orange-text'>Your cart is empty!</p>
           <p>Dont miss out on the great deals we have visit our store today!</p>
         </div>
       );
@@ -33,7 +33,7 @@ class Cart extends React.Component {
           <div>{this.listCart()}</div>
           <div className="customHr" />
           <div className="checkout-bar">
-            <span>Total: {this.renderTotal()} plus tax</span>
+            <span><span className='orange-text'>Total: </span>{this.renderTotal()} plus tax</span>
             <Link to="/order">Checkout</Link>
             <button onClick={() => this.props.dispatch(clearAll())}>
               Clear cart
