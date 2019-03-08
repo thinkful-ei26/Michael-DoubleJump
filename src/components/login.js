@@ -1,7 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { registerUser } from "../actions/users";
-import { login } from "../actions/auth";
 import LoginForm from "./login-form";
 import { Link, Redirect } from "react-router-dom";
 import "./css/login.css";
