@@ -4,6 +4,10 @@
   color: orange;
 }
 
+.buyButton:hover{
+  cursor: pointer;
+}
+
 .minibutton{
   display: none;
 }
