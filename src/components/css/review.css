@@ -1,7 +1,28 @@
+.orange-hr{
+    border-color: orange;
+    width: 80%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.white-text{
+    font-size: 1.5vw;
+    color: white;
+}
+
+.orange-text{
+    font-size: 1.5vw;
+    color:orange;
+}
 
 .reviewTitle{
-    font-size: 32px;
-    color:white;
+    text-align: center;
+    font-size: 5vw;
+    color: orange;
+}
+
+.review-description-container{
+    display: none;
 }
 
 .reviewContainer{
@@ -15,6 +36,7 @@
 .reviewBody{
     font-size: 20px;
     color:white;
+    padding: 5vw;
 }
 
 .reviewImg-left{
@@ -41,8 +63,13 @@
 }
 @media only screen and (min-width: 768px) {
 .reviewTitle{
+    text-align: center;
     font-size: 32px;
-    color:white;
+    color: orange;
+}
+
+.review-description-container{
+    display: block;
 }
 
 .reviewContainer{
@@ -72,7 +99,7 @@
     width: 400px;
     height: 300px;
     border: solid 3px black;
-    
+    margin: 2vw;
 }
 
 .rating-span{

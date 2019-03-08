@@ -3,31 +3,31 @@ import { Link } from "react-router-dom";
 
 export default function ReviewItem({ reviews, review }) {
   return (
-    <div className="containerTopReviews">
-      <div className="innerReviewGrid">
+    <Link
+      to={{
+        pathname: `review/${review.id}`,
+        state: { reviews: reviews }
+      }}
+      className="titleTopReviews"
+    >
+      <div className="innerReviewFlex">
         <img className="imgTopReviews" src={review.imgUrl} alt="review" />
-        <div>
-          <Link
-            to={{
-              pathname: `review/${review.id}`,
-              state: { reviews: reviews }
-            }}
-            className="titleTopReviews"
-          >
-            {review.name}
-          </Link>
+        <div class='review-description-container'>
+          {review.name}
           <br />
-          <span>{review.genre}</span>
-          <span>
+          <span className='white-text'><span className='orange-text'>Genre: </span>{review.genre}</span>
+          <br></br>
+          <span className='orange-text'>
             {" "}
-            {review.author}: "{review.description}"
+            Author: <span className='white-text'>{review.author}</span>
+            <br></br>
+            <span className='white-text'>{review.description}</span>
           </span>
-        </div>
-        <br></br>
-        <div>
-          <span className="hugetext">{review.rating.toString()}/10</span>
+          <br></br>
+          <span className="orange-text">Avg Rating: {review.rating.toString()}/10</span>
         </div>
       </div>
-    </div>
+    </Link>
+
   );
 }
