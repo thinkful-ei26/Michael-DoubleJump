@@ -1,3 +1,7 @@
+.tagline{
+    text-align: center;
+}
+
 .orange-hr{
     border-color: orange;
     width: 80%;
@@ -36,14 +40,15 @@
 .reviewBody{
     font-size: 20px;
     color:white;
-    padding: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .reviewImg-left{
   
-    width:100%;
+    width: 60%;
     display: block;
-    margin-right:20px;
+    margin: auto;
     border-radius:5px;
 }
 .reviewImg-right{
@@ -83,14 +88,16 @@
 .reviewBody{
     font-size: 26px;
     color:white;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .reviewImg-left{
   
     height: 500px;
+    width: 50%;
     display: block;
-    float:left;
-    margin-right:20px;
+    margin: auto;
     border-radius:5px;
 }
 .reviewImg-right{

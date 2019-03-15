@@ -5,7 +5,7 @@ export default function ProductItem({ product, onClick }) {
   return (
     <div className="innerReviewFlex">
       <img className="imgTopReviews" src={product.imgUrl} alt="review" />
-      <div class='orange-text mini'>
+      <div className='orange-text mini'>
         {product.name}
         <br></br>
         <span className='orange-text'>

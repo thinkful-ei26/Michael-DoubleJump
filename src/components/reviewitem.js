@@ -12,7 +12,7 @@ export default function ReviewItem({ reviews, review }) {
     >
       <div className="innerReviewFlex">
         <img className="imgTopReviews" src={review.imgUrl} alt="review" />
-        <div class='review-description-container'>
+        <div className='review-description-container'>
           {review.name}
           <br />
           <span className='white-text'><span className='orange-text'>Genre: </span>{review.genre}</span>

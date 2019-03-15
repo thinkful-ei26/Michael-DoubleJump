@@ -27,7 +27,7 @@ class Order extends React.Component {
         <div className="checkout-bar">
           <span>Total: {this.renderTotal()} plus tax</span>
           <Link
-            class="checkout-button"
+            className="checkout-button"
             to="/complete"
             onClick={() => {
               this.props.dispatch(setNewOrder());

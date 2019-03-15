@@ -11,10 +11,10 @@ class Login extends React.Component {
     } else {
       return (
         <div className="loginBackground">
-          <h3 className="loginText orange-text"> Sign in</h3>
+          <h3 className="loginText"> Sign in</h3>
           <LoginForm />
           <div className='customHr'></div>
-          <h3 className="loginText orange-text"> Sign up</h3>
+          <h3 className="loginText"> Sign up</h3>
           <Link className="smallloginText" to="/register">
             Register
           </Link>
