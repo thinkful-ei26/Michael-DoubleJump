@@ -16,8 +16,8 @@ class ReviewNav extends React.Component {
       "Racing",
       "Sports"
     ];
-    return tempArray.map(term => (
-      <li onClick={() => this.setSearch(term)}>{term}</li>
+    return tempArray.map((term, index) => (
+      <li key={index} onClick={() => this.setSearch(term)}>{term}</li>
     ));
   };
   setSearch = term => {

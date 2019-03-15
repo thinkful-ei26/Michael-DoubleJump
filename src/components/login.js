@@ -1,7 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { registerUser } from "../actions/users";
-import { login } from "../actions/auth";
 import LoginForm from "./login-form";
 import { Link, Redirect } from "react-router-dom";
 import "./css/login.css";
@@ -15,8 +13,7 @@ class Login extends React.Component {
         <div className="loginBackground">
           <h3 className="loginText"> Sign in</h3>
           <LoginForm />
-          <br />
-          <hr />
+          <div className='customHr'></div>
           <h3 className="loginText"> Sign up</h3>
           <Link className="smallloginText" to="/register">
             Register

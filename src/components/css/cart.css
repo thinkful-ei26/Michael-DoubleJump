@@ -23,9 +23,10 @@
     line-height: 1.2;
 }
 .cartItems{
+    margin-left: 15%;
+    margin-right: 15%;
     color: white;
     display:block;
-    margin-left: 50px;
     padding:5px;
     
 }
@@ -91,7 +92,6 @@
 .cartItems{
     color: white;
     display:block;
-    margin-left: 50px;
     padding:5px;
     
 }

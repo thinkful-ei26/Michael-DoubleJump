@@ -1,7 +1,32 @@
+.tagline{
+    text-align: center;
+}
+
+.orange-hr{
+    border-color: orange;
+    width: 80%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.white-text{
+    font-size: 1.5vw;
+    color: white;
+}
+
+.orange-text{
+    font-size: 1.5vw;
+    color:orange;
+}
 
 .reviewTitle{
-    font-size: 32px;
-    color:white;
+    text-align: center;
+    font-size: 5vw;
+    color: orange;
+}
+
+.review-description-container{
+    display: none;
 }
 
 .reviewContainer{
@@ -15,13 +40,15 @@
 .reviewBody{
     font-size: 20px;
     color:white;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .reviewImg-left{
   
-    width:100%;
+    width: 60%;
     display: block;
-    margin-right:20px;
+    margin: auto;
     border-radius:5px;
 }
 .reviewImg-right{
@@ -41,8 +68,13 @@
 }
 @media only screen and (min-width: 768px) {
 .reviewTitle{
+    text-align: center;
     font-size: 32px;
-    color:white;
+    color: orange;
+}
+
+.review-description-container{
+    display: block;
 }
 
 .reviewContainer{
@@ -56,14 +88,16 @@
 .reviewBody{
     font-size: 26px;
     color:white;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .reviewImg-left{
   
     height: 500px;
+    width: 50%;
     display: block;
-    float:left;
-    margin-right:20px;
+    margin: auto;
     border-radius:5px;
 }
 .reviewImg-right{
@@ -72,7 +106,7 @@
     width: 400px;
     height: 300px;
     border: solid 3px black;
-    
+    margin: 2vw;
 }
 
 .rating-span{

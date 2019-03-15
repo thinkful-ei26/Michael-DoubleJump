@@ -3,26 +3,25 @@ import "./css/productitem.css";
 
 export default function ProductItem({ product, onClick }) {
   return (
-    <div className="containerProducts">
-      <div className="innerGrid">
-        <img className="imgProducts" src={product.imgUrl} alt="product" />
-        <div>
-          <span className="titleProducts">{product.name}</span>
-          <div>
-            <span className="priceProducts">{product.genre}</span>
-          </div>
-          <div>
-            <span className="priceProducts">{product.description}</span>
-          </div>
-          <br />
-          <div>
-            <span className="priceProducts">Buy New: {product.price} </span>
-            <button onClick={() => onClick()} className="buyButton">
-              add to cart
+    <div className="innerReviewFlex">
+      <img className="imgTopReviews" src={product.imgUrl} alt="review" />
+      <div className='orange-text mini'>
+        {product.name}
+        <br></br>
+        <span className='orange-text'>
+          {" "}
+          Description: <span className='white-text '>{product.author}</span>
+          <br></br>
+          <span className='white-text'>{product.description}</span>
+        </span>
+        <br></br>
+        <button onClick={() => onClick()} className="buyButton">
+          Add to cart
             </button>
-          </div>
-        </div>
       </div>
+      <button className='minibutton' onClick={() => onClick()}>
+        Add to cart
+            </button>
     </div>
   );
 }

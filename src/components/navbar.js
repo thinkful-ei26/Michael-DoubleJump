@@ -1,11 +1,11 @@
 import React from "react";
-import "./css/sidebar.css";
+import "./css/navbar.css";
 import { Link } from "react-router-dom";
 import Banner from "./banner";
 import { connect } from "react-redux";
 import { logout } from "../actions/auth";
 
-function Sidebar(props) {
+function Navbar(props) {
   if (props.user !== null) {
     return (
       <React.Fragment>
@@ -89,4 +89,4 @@ const mapStateToProps = state => ({
   cart: state.cart.items
 });
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps)(Navbar);

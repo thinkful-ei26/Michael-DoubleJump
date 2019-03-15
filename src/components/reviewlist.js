@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { fetchReviews } from "../actions";
 import "./css/reviewlist.css";
 import ReviewNav from "./reviewnav";
@@ -12,12 +11,16 @@ class ReviewList extends React.Component {
   }
   createList() {
     const temp = this.props.reviews.map((review, index) => (
-      <ReviewItem
-        key={index}
-        reviews={this.props.reviews}
-        review={review}
-        searchTerm={this.props.searchTerm}
-      />
+      <div key={index}>
+        <hr className='orange-hr'></hr>
+        <ReviewItem
+          key={index}
+          reviews={this.props.reviews}
+          review={review}
+          searchTerm={this.props.searchTerm}
+        />
+        <hr className='orange-hr'></hr>
+      </div>
     ));
     return temp;
   }

@@ -2,11 +2,9 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
   Switch
 } from "react-router-dom";
-import Sidebar from "./sidebar";
-import SideNav from "./sidenav";
+import Navbar from "./navbar";
 import ReviewList from "./reviewlist";
 import Login from "./login";
 import MainStore from "./mainstore";
@@ -24,7 +22,7 @@ export default class HomePage extends React.Component {
     return (
       <Router>
         <div>
-          <Sidebar />
+          <Navbar />
           <main>
             <Switch>
               <Route exact path="/" component={MainPage} />
